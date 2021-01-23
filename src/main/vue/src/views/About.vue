@@ -3,3 +3,20 @@
     <h1>This is an about page</h1>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {}
+  },
+  mounted() {
+    this.load()
+  },
+  methods: {
+    load() {
+      this.axios.get('/api/system/info').then(res => {
+        console.log(res.data)
+      })
+    }
+  }
+}
+</script>
